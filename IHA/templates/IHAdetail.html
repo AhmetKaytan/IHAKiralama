@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %} MusteriDetail {% endblock %}
+
+{% block body%}
+
+{% if user.is_authenticated %}
+
+<br>
+
+<div>
+    <button type="button" style="display: flex;"><a href="Musteriform.html">IHA'yı sil</a></button>
+</div>
+<div>
+    <button type="button" style="display: flex;"><a href="Musteriform.html">IHA'yı güncelle</a></button>
+</div>
+<table class="table table-striped table-bordered table-hover" style="width:50%">
+    <thead class="thead-light">
+        <tr>
+            <th>Field</th>
+            <th>Info</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td> Id Numarası: </td>
+            <td>{{ IHA.id }}</td>
+        <tr>
+            <td> Marka: </td>
+            <td>{{ IHA.marka }} </td>
+        </tr>
+        <tr>
+            <td> Model: </td>
+            <td>{{ IHA.model}} </td>
+        </tr>
+        <tr>
+            <td> Ağırlık: </td>
+            <td>{{ IHA.agirlik}} </td>
+        </tr>
+        <tr>
+            <td> Kategori:</td>
+            <td>{{ IHA.kategori}} </td>
+        </tr>
+    </tbody>
+</table>
+
+
+{% else %}
+<p>You are not logged in</p>
+<p>Please log in to continue</p>
+<a href="{% url 'login' %}">Log In</a>
+{% endif %}
+
+{% endblock %}

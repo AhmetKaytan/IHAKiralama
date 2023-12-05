@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %} MusteriDetail {% endblock %}
+
+{% block body%}
+
+{% if user.is_authenticated %}
+
+<br>
+
+<div>
+    <button type="button" style="display: flex;"><a href="Musteriform.html">Müşteriyi sil</a></button>
+</div>
+<div>
+    <button type="button" style="display: flex;"><a href="Musteriform.html">Müşteriyi güncelle</a></button>
+</div>
+
+<table class="table table-striped table-bordered table-hover" style="width:50%">
+    <thead class="thead-light">
+        <tr>
+            <th>Field</th>
+            <th>Info</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td> Id Numarası: </td>
+            <td>{{ Musteri.id }}</td>
+        <tr>
+            <td> Şirket ismi: </td>
+            <td>{{ Musteri.sirket_ismi }} </td>
+        </tr>
+        <tr>
+            <td> Ülke: </td>
+            <td>{{ Musteri.ulke}} </td>
+        </tr>
+        <tr>
+            <td> Telefon Numarası: </td>
+            <td>{{ Musteri.telefon_no}} </td>
+        </tr>
+        <tr>
+            <td> Adres:</td>
+            <td>{{ Musteri.adres}} </td>
+        </tr>
+        <tr>
+            <td> Kayıt Tarihi: </td>
+            <td>{{ Musteri.kayit_tarihi}} </td>
+        </tr>
+    </tbody>
+</table>
+
+
+{% else %}
+<p>You are not logged in</p>
+<p>Please log in to continue</p>
+<a href="{% url 'login' %}">Log In</a>
+{% endif %}
+
+{% endblock %}

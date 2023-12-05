@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %} MusteriDetail {% endblock %}
+
+{% block body%}
+
+{% if user.is_authenticated %}
+
+<br>
+
+<div>
+    <button type="button" style="display: flex;"><a href="Musteriform.html">Kiralamayı iptal et</a></button>
+</div>
+<div>
+    <button type="button" style="display: flex;"><a href="Musteriform.html">Kiralamayı güncelle</a></button>
+</div>
+
+<table class="table table-striped table-bordered table-hover" style="width:50%">
+    <thead class="thead-light">
+        <tr>
+            <th>Field</th>
+            <th>Info</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td> Id Numarası: </td>
+            <td>{{ Kiralama.id }}</td>
+        <tr>
+            <td> Kiralama Tarihi: </td>
+            <td>{{ Kiralama.kiralama_tarihi }} </td>
+        </tr>
+        <tr>
+            <td> Kiralama Süresi: </td>
+            <td>{{ Kiralama.kiralama_suresi}} </td>
+        </tr>
+        <tr>
+            <td> Kirlama Ücreti: </td>
+            <td>{{ Kiralama.kiralama_ucreti}} </td>
+        </tr>
+        <tr>
+            <td> IHA ID:</td>
+            <td>{{ Kiralama.IHA_id}} </td>
+        </tr>
+        <tr>
+            <td> Müşteri ID: </td>
+            <td>{{ Kiralama.Musteri_id}} </td>
+        </tr>
+        <tr>
+            <td> Kiralama Saati: </td>
+            <td>{{ Kiralama.kiralama_saati}} </td>
+        </tr>
+    </tbody>
+</table>
+
+
+{% else %}
+<p>You are not logged in</p>
+<p>Please log in to continue</p>
+<a href="{% url 'login' %}">Log In</a>
+{% endif %}
+
+{% endblock %}

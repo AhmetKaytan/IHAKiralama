@@ -1,0 +1,18 @@
+{% extends 'base.html' %} 
+{% block body %}
+  <div>
+    {% if user.is_authenticated %}
+    <h3>Anasayfaya hoşgeldiniz...</h3>
+    {% else %}
+    <h1>Baykar IHA Kiralama Sistemine Hoşgeldiniz</h1>
+    <h3>Lütfen giriş yapınız...</h3>
+    {% endif %}
+    <p>
+      1986’dan bu yana Türkiye’nin teknolojik olarak bağımsızlaşması amacıyla yerli ve milli üretimden yana çalışan Baykar, geçtiğimiz 35 yıl içinde Türkiye’de savunma ve havacılık alanında dönüşüm yaratacak bir ivmenin öncüsü haline geldi. Bugün Baykar olarak, otomotiv endüstrisi için adım attığımız mühendislik girişimimizi yeni kuşak mühendislerimizle gökyüzüne taşıyarak dünyanın sayılı insansız hava aracı üreticilerinden biri olmanın gururunu taşıyoruz. Türkiye’nin ilk yerli ve milli İnsansız Hava Araçlarını üretirken en önemli motivasyonumuz her zaman kendi mühendislerimize ve beyin gücümüze güvenmek oldu. 
+
+      Baykar’ın Türk Silahlı Kuvvetleri’nin envanterine giren ve yurt dışına ihraç edilen savunma teknolojilerinin başarısında da sürekli üretim ve geliştirme kültürü öncü rol oynuyor. Sanayi ve Teknoloji Bakanlığı’ndan tescilli Baykar Ar-Ge Merkezi’mizde havacılık arenasında paradigma dönüşümü sağlayacak ileri teknolojileri milli ve özgün olarak tasarlamaya odaklanıyoruz. Sonuç odaklı düşünen ve motivasyonu yüksek ekip ruhumuz; Ar-Ge ve üretim süreçlerinin iç içe geçmesiyle yeni teknolojilerin dinamik bir şekilde uygulanmasını sağlıyor. Tasarlamak, yapmak ve üretmek kadar; askeriyle, sanayicisiyle ve toplumun tüm katmanları tarafından insansız ve otonom teknolojilerin sahiplenilmesi için çalışmalarımızı sürdürüyoruz. 
+      
+      Kendi finanse ettiği Ar-Ge faaliyetleriyle Türk havacılık ve savunma tarihinde ilklere imza atan ve Türkiye’de %93 yerlilik oranına ulaşan Baykar, İnsansız Hava Araçları alanında  dünya çapında en ileri teknolojik sistemleri geliştirmeye devam etmektedir. 
+    </p>
+  </div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %} IHAIndex {% endblock %}
+
+{% block body%}
+
+{% if user.is_authenticated %}
+
+<div>
+    <button type="button" style="display: flex;"><a href="">IHA oluştur</a></button>
+</div>
+<table class="table table-striped table-bordered table-hover" style="width:50%" >
+    <caption>IHA Listesi</caption>
+    <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">Marka</th>
+            <th scope="col">Model</th>
+            <th scope="col">Ağırlık</th>
+            <th scope="col">Kategori</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for IHA in IHAlar %}
+        <tr>
+            <td><a href="{{ IHA.id }}">{{ IHA.id }}</a></td>
+            <td>{{ IHA.marka }}</td>
+            <td>{{ IHA.model}}</td>
+            <td>{{ IHA.agirlik}}</td>
+            <td>{{ IHA.kategori}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% else %}
+<p>You are not logged in</p>
+<p>Please log in to continue</p>
+<a href="{% url 'login' %}">Log In</a>
+{% endif %}
+
+{% endblock %}
